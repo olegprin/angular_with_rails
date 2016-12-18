@@ -1,0 +1,84 @@
+
+ <body> 
+    <div class="header">
+
+      <div class="row">
+
+
+        <div class="col-md-9"> 
+          <div id="site_title">
+
+            <%#= link_to image_tag("shop/logo.png"), root_path%></div>
+            <!-- Main Menu -->
+            <ol id="menu">
+              <li class="active_menu_item"><a ui-sref="root_path">Main</a>
+              <li class="active_menu_item"><a>Category</a>
+                <ol>
+                   <a class="btn btn-primary btn-sm" ui-sref="categories_path">All categories</a>
+           
+                   <a class="btn btn-primary btn-sm" ui-sref="new_category_path">Add category</a>
+            
+                  <li><%#= link_to "Telephone", telephone_products_path %></li>
+                  <li><%#= link_to "Laptop", laptop_products_path %></li>
+                  <li><%#= link_to "Car", car_products_path %></li>
+                </ol>
+              </li>
+              <!-- END sub menu -->
+             
+              <li><a>Product</a>
+                <!-- sub menu -->
+                <ol>
+                
+                  <%# if user_signed_in? %>
+                    <li>
+                      <a class="btn btn-primary btn-sm" ui-sref="products_path">All product</a>
+                 
+                       <a class="btn btn-primary btn-sm" ui-sref="categories_path">Add product</a>
+                    </li>
+                  <%# else %>
+                    <li><%#= link_to "Add product", new_user_registration_path
+                      %> 
+                    </li>
+                  <%# end %>
+                </ol>
+
+              </li>
+              <!-- END sub menu -->
+              
+              <li><a>Contact</a>
+                <!-- sub menu -->
+                <ol>
+              <!-- END sub menu -->
+              <a class="btn btn-primary btn-sm" ui-sref=" new_messagestoadministrator_path ">Contact</a>
+              <li><%#= link_to "Contact", new_messagestoadministrator_path %></li> 
+               <li> <%#=render "shared/exit"%> </li>
+                <%#if user_signed_in?%>
+                   <li><%#= link_to 'Signout', destroy_user_session_path, :method => :delete  %> </li>
+                 </ol>
+                </li>             
+                <%#else%>
+                           <li> <%=render "shared/exit"%> </li>
+
+                    <li> <%#= link_to "Login", new_user_session_path %> </li> 
+                    <li> <%#= link_to "Login", new_user_session_path %> </li> 
+                   
+  
+                <%#end%>
+            </ol>
+          </div>
+                
+
+      
+
+          <div class="col-md-2">
+           
+          </div>  
+        
+          
+  <%# end %>
+
+  </div>
+      </div>
+
+ 
+</div>

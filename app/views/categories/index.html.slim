@@ -1,0 +1,44 @@
+div content-for="bredcrumbs"
+  span Главная
+  .bredcrumbs__actions
+    a.btn.btn-success.only-admin ui-sref="new_category_path" Add category
+table.table
+  thead.bg-blue.text-white
+    tr
+
+  tbody.bg-white ng-repeat="group in ctrl.groups.collection"
+    tr
+      td colspan="4"
+        b ng-bind="group.title"
+        .table-actions.pull-right.only-admin
+          a.btn.btn-success.btn-sm ng-href="/products/new?category_id={{group.id}}" CREATE PRODUCT
+          a.btn.btn-primary.btn-sm ui-sref="edit_category_path(group)" Edit category
+          a.btn.btn-danger.btn-sm ng-click="ctrl.destroy_category(group)" Delete Category
+
+
+    tr ng-repeat="theme in group.products"
+      div ng-show="theme.id!=null"
+        td
+          .user-info.text-center
+            label.user-info__avatar
+              div ng-show="theme.id!=null"
+                input.hidden type="file" fileupload="Routes.photo_upload_path({photo_id: theme.id})" ng-model="theme.avatar"
+                img ng-src="{{theme.avatar}}" width="200" height="200"
+        
+
+
+        td.w1.text-center ng-bind="theme.tit"
+        td.w1.text-center ng-bind="theme.price"
+        td.w1
+          a.link.bold ng-bind="theme.last_post.topic.title" ui-sref="topic_path(theme.last_post.topic)"
+          .text-gray ng-show="theme.last_post"
+            ' от
+            a.link.text-red.bold ui-sref="user_path(theme.last_post.user)" ng-bind="theme.last_post.user.name"
+            '
+            span ng-bind="theme.last_post.created_at | date:'dd.MM.yyyy HH:mm'"
+          a.link.bold ui-sref="product_path(theme)" ng-bind="theme.title"
+            .text-gray ng-bind="theme.description"
+            .table-actions.only-admin
+              div ng-show="theme.id!=null"
+                a.btn.btn-primary.btn-sm ui-sref="edit_product_path(theme.id)" Edit PRODIUCT
+                a.btn.btn-danger.btn-sm ng-click="ctrl.destroy_product(theme)" Delete product

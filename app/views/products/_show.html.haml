@@ -1,0 +1,36 @@
+
+%div{:class=>"row"}
+  = render "stores/modal_for_cart"
+  -if @product.present?  
+    %div{:class=>"col-md-6"}     
+      %p{:class=>"tovar"}
+      %p{:class=>"link_different"}
+
+
+      %p
+
+      
+      %div{:class=>"like_dislike_id"}
+                
+      
+      %div{:class=>"row"}
+
+
+        %div{:class=>"col-md-5"} 
+          %p{:class=>"price_show"}
+   
+        %div{:class=>"col-md-5"}     
+  
+          
+    %div{:class=>"col-md-6"}     
+      %p
+   
+      
+
+        %p{:class=>"buy_product"}
+        
+     
+       
+
+  -else
+   

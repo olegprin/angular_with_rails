@@ -1,0 +1,23 @@
+div content-for="title" Форум на AngularJS и Ruby On Rails
+
+div content-for="bredcrumbs"
+  span Главная
+  .bredcrumbs__actions
+    a.btn.btn-success.only-admin ui-sref="new_messagestoadministrator_path" Send Message to administrator
+table.table
+  thead.bg-blue.text-white
+    tr
+      td Name of product
+      td.text-center Тем
+      td.text-center Постов
+      td Last product
+  tbody.bg-white ng-repeat="group in ctrl.messagestoadministrators.collection"
+    tr
+      td colspan="4"
+        b ng-bind="group.email"
+        .table-actions.pull-right.only-admin
+          a.btn.btn-success.btn-sm ng-href="/products/new?category_id={{group.id}}" Create product
+          a.btn.btn-primary.btn-sm ui-sref="edit_category_path(group)" Edit category
+          a.btn.btn-danger.btn-sm ng-click="ctrl.destroy_category(group)" Delete
+
+   

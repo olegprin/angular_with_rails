@@ -1,0 +1,28 @@
+
+  
+.rows   
+  = form_for Product.new, layout: :vertical do |f|
+    .col-md-11
+      span ng-bind="ctrl.product_id"
+    .col-md-11
+      = f.text_field :title, label: "title", class: "product_title", placeholder: "title",:size => 51
+    .col-md-11
+      p Press <code>esc</code> to clear it!
+      = f.text_area :description, label: "description", class: "product_description", placeholder: "description", rows: 6,cols: 50
+    .col-md-11
+      = f.text_field :price, label: "price", class: "product_price", placeholder: "price",:size => 51
+    .col-md-11
+      = f.text_field :adress, label: "price", class: "product_price", placeholder: "adress",:size => 51  
+    .col-md-11
+      p sell house / or rent house
+      = f.check_box :type_sell, label: "price", class: "product_price", placeholder: "type",:size => 51
+   
+
+    .col-md-11 
+    /*=f.collection_select :id, Category.all, :title, :title, prompt: true, label: "Category of product"
+ 
+    /*=f.file_field :uploaded_file           
+    .col-md-11
+      = f.submit 'Save'
+
+= ui_button 'back', 'Back', root_path

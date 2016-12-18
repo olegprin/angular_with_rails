@@ -1,0 +1,21 @@
+div content-for="bredcrumbs"
+  span Главная
+
+table.table
+  thead.bg-blue.text-white
+    tr
+      td.text-center Title
+      td.text-center Description
+      td Price
+      td Photo
+  tbody.bg-white ng-repeat="group in ctrl.products.collection"
+    tr
+      td
+        b ng-bind="group.title" 
+      td.w1.text-center ng-bind="group.id"  
+      td.w1.text-center ng-bind="group.price"    
+      td.w1
+        img ng-src="{{group.avatar_lm}}"
+      td.w1
+        .user-info.text-center
+          input.hidden type="file" fileupload="Routes.uploads_avatar_path()" ng-model="gon.current_user.avatar_url"

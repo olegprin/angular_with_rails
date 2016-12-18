@@ -1,0 +1,32 @@
+div content-for="bredcrumbs"
+  span Главная
+  .bredcrumbs__actions
+    a.btn.btn-success ui-sref="new_category_path" Create category
+table.table
+  thead.bg-blue.text-white
+    tr
+      td.text-center Title
+      td.text-center Description
+      td Price
+      td Photo
+      td Action
+  tbody.bg-white ng-repeat="group in ctrl.products.collection"
+    tr
+      td
+       
+        b ng-bind="group.title" 
+      td.w1.text-center ng-bind="group.description"  
+      td.w1.text-center ng-bind="group.price"    
+      td.w1 
+        .user-info.text-center
+          label.user-info__avatar
+            input.hidden type="file" fileupload="Routes.photo_upload_path({photo_id: group.id})" ng-model="group.avatar"
+            img ng-src="{{group.avatar_lm}}" width="200" height="200"
+
+    
+      td.w1.text-center 
+        a.btn.btn-primary.btn-sm ui-sref="edit_product_path({id: group.id})" Редактировать
+        a.btn.btn-danger.btn-sm ng-click="ctrl.destroy_product(group)" Удалить
+      td.w1
+      
+          

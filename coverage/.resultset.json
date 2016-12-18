@@ -1,0 +1,40 @@
+{
+  "RSpec" : {
+    "coverage" : {
+      "/test_ma/spec/support/database_cleaner.rb" : [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/test_ma/spec/support/factory_girl.rb" : [
+        1,
+        1,
+        null
+      ],
+      "/test_ma/app/models/answerfrommoderator.rb" : [
+        1,
+        null
+      ]
+    },
+    "timestamp" : 1478083987
+  }
+}

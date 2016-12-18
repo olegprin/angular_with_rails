@@ -1,0 +1,19 @@
+<%= form_for Messagestoadministrator.new,  layout: :vertical do |f| %>
+    <div class="field">
+      <label>Email</label>
+    <%= f.text_field :email, label: "email", size: "40"%>
+  </div>
+   <div class="field">
+       <label>Telephone</label>
+      <%= f.text_field :telephone, label: "telephone", size: "40"%>
+   </div>
+ <div class="field">
+    <label>Name</label>
+    <%= f.text_field :name, label: "name", size: "40"%>
+     </div>
+     <div class="field">
+       <label>Message</label>
+    <%= f.text_area :message, label: "message", size: "39x5"%>
+    </div>
+    <%= f.submit label: "Create message"%>
+<%end%>

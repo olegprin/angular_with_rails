@@ -1,0 +1,24 @@
+div content-for="title"
+  | {{ctrl.theme.resource.title}}
+
+.row
+  .col-md-6
+    p
+      span ng-bind="ctrl.theme.resource.title"
+    p
+      span ng-bind="ctrl.theme.resource.price"
+    .bredcrumbs__actions
+  .col-md-6
+    span ng-bind="ctrl.theme.resource.description"
+    .bredcrumbs__actions
+
+
+
+
+
+
+
+      a.btn.btn-success ng-href="/topics/new?theme_id={{ctrl.theme.resource.id}}" Начать топик
+
+
+div paging="" page="ctrl.topics.page" page-size="20" total="ctrl.topics.total_count" paging-action="ctrl.query(page)"

@@ -1,0 +1,6 @@
+
+= form_for Category.new do |f|
+  .field
+    = f.label :title
+    = f.text_field :title, class: "message_category"
+  .actions = f.submit

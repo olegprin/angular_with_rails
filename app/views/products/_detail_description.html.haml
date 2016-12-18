@@ -1,0 +1,29 @@
+%p#notice= notice
+
+
+        
+
+%p    
+  Title:
+  = @product.title
+/*= image_tag(@product.uploaded_file.url, size: "280x140")
+%p
+  Price:
+  = @product.price
+%p
+  Adress:
+  = @product.adress
+
+%p
+  Latitude:
+  = @product.latitude
+
+%p
+  Longitude:
+  = @product.longitude
+
+%p
+  %div{:class=>"description_modal"}       
+  Description:
+  = @product.description
+

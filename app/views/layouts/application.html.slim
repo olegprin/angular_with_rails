@@ -1,0 +1,22 @@
+html ng-app="app"
+  head
+    title only-text="true" ng-yield="title"
+
+    base href="/"
+    = render "shared/navbar"
+    = stylesheet_link_tag 'application'
+  body ng-controller="MainCtrl as main" ng-class="gon.current_user.role"
+    .layout.body
+      .search
+
+      .bredcrumbs ng-yield="bredcrumbs"
+      .wrapper
+        .content
+          ui-view
+        .sidebar
+        
+
+
+    = javascript_include_tag 'application'
+
+= Gon::Base.render_data
